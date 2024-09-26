@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+
+<div class="container">
+
+    <h2 class="mb-4">Buyurtmalar</h2>
+
+    <table class="table align-middle mb-0 bg-white">
+        <thead class="bg-light">
+            <tr>
+                <th>ID</th>
+                <th>Book Name</th>
+                <th>Customer</th>
+                <th>Count</th>
+                <th>Total price</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            {% for order in orders %}
+
+            <tr>
+                <td>
+                    <p class="fw-bold mb-1">{{ order.id }}</p>
+                </td>
+                <td>
+                    <p class="fw-bold mb-1">{{ order.book.name }}</p>
+                </td>
+                <td>
+                    <p class="fw-bold mb-1">{{ order.customer.first_name }} {{ order.customer.last_name }}</p>
+                </td>
+                <td>
+                    <p class="fw-bold mb-1">{{ order.count }}</p>
+                </td>
+                <td>
+                    <p class="fw-bold mb-1">{{ order.total_price }}</p>
+                </td>
+            </tr>
+
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+
+
+{% endblock content %}

@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<div class="container">
+
+    <h2 class="mb-4">Mijozlar</h2>
+
+    <table class="table align-middle mb-0 bg-white">
+        <thead class="bg-light">
+            <tr>
+                <th>Full name</th>
+                <th>Email</th>
+                <th>Status</th>
+                <th>Phone number</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            {% for customer in customers %}
+
+            <tr>
+                <td>
+                    <p class="fw-bold mb-1">{{ customer.first_name }} {{ customer.last_name }}</p>
+                </td>
+                <td>
+                    <p class="fw-normal mb-1">{{ customer.email }}</p>
+                </td>
+                <td>
+                    <span class="badge badge-success rounded-pill d-inline">Active</span>
+                </td>
+                <td>{{ customer.phone }}</td>
+            </tr>
+
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+
+{% endblock content %}

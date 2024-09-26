@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+
+
+{% block content %}
+
+
+<h2 class="mb-4">Kitoblar ro'yhati</h2>
+
+<div class="row gx-4">
+
+    {% for book in books %}
+
+    <div class="card col-4 mb-4">
+        <img src="{{ book.image.url }}" class="card-img-top" alt="Fissure in Sandstone" />
+        <div class="card-body">
+            <h5 class="card-title">{{ book.title }}</h5>
+
+            <div class="d-flex justify-content-between">
+                <p class="">{{ book.author }}</p>
+                <strong class="d-block mb-1">Price: {{ book.price }}</strong>
+            </div>
+
+            <a href="#!" class="btn btn-primary" data-mdb-ripple-init>Sotib olish</a>
+        </div>
+    </div>
+
+    {% endfor %}
+</div>
+
+{% endblock content %}
